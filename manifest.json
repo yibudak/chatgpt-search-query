@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "ChatGPT Search Query",
-  "description": "Extract search queries from ChatGPT conversations. View the hidden search keywords that ChatGPT uses internally when researching products and topics.",
+  "description": "Extract hidden search queries from ChatGPT conversations. View the hidden search keywords that ChatGPT uses when researching.",
   "version": "1.0.0",
   "author": "Ahmet Yigit Budak",
   "homepage_url": "https://github.com/yibudak/chatgpt-search-query",
