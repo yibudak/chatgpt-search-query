@@ -63,7 +63,7 @@ export default function Popup() {
     }
   };
 
-  // Recursively extract all search_queries from the response
+  // Recursively extract all search_model_queries from the response
   const extractSearchQueries = (data: unknown, results: string[] = []): string[] => {
     if (!data || typeof data !== 'object') return results;
 
@@ -74,10 +74,11 @@ export default function Popup() {
     } else {
       const obj = data as Record<string, unknown>;
 
-      if (Array.isArray(obj.search_queries)) {
-        for (const sq of obj.search_queries as { q?: string }[]) {
-          if (sq.q && typeof sq.q === 'string' && !results.includes(sq.q)) {
-            results.push(sq.q);
+      // Check for search_model_queries object
+      if (obj.type === 'search_model_queries' && Array.isArray(obj.queries)) {
+        for (const query of obj.queries) {
+          if (typeof query === 'string' && !results.includes(query)) {
+            results.push(query);
           }
         }
       }
