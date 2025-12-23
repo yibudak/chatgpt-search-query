@@ -27,7 +27,8 @@ export const baseManifest = {
 
 export const baseBuildOptions: BuildOptions = {
   sourcemap: isDev,
-  emptyOutDir: !isDev
+  emptyOutDir: !isDev,
+  cssCodeSplit: false,
 }
 
 export default defineConfig({
